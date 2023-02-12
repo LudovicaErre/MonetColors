@@ -1,0 +1,83 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
+@import url('https://cdn.rawgit.com/lonekorean/gist-syntax-themes/d49b91b3/stylesheets/one-dark.css');
+@font-face {
+font-family: "Regular";
+src: url("font/Domine-Regular.ttf");
+}
+
+/*navbar*/
+
+.navbar {
+	background-color: #fff;
+	height: 5em;
+	font-family: "Regular";
+}
+
+.nav-link {
+	margin-left: 5em;
+}
+
+.nav-masthead .nav-link {
+	border-bottom: 0.25rem solid;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+	border-bottom-color: #000;
+}
+
+.nav-masthead .active {
+	color: #fff;
+	border-bottom-color: #fff;
+}
+
+.dropdown-menu{
+	font-family: "Regular";
+	background-color: #fff;
+}
+
+/*body*/
+
+.px-3{
+	padding-top: 14.5rem;
+	margin-right: 1.3em;
+	font-family: "Regular";
+}
+
+.cover-container {
+	background-image: url("images/lilies.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.md-start {
+	color: #000;
+	margin-left: 2em;
+	margin-bottom: -1.5em;
+	padding: 0.25em;
+	padding-left: 3em;
+	font-family: "Regular";
+}
+
+#aa{
+	color: #fff;
+	outline: none;
+  	text-decoration: none;
+}
+
+a{
+	text-decoration: none;
+}
+
+#aa:hover, .btn-sm:hover{
+	color: #9aaee2;
+	outline: none;
+  	text-decoration: none;
+}
+
+
+/*footer*/
+
+footer{
+	font-family: "Regular";
+}
