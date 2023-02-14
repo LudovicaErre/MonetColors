@@ -79,19 +79,51 @@ a{
 }
 
 #proj{
-	margin-top: 5em;
+	margin-top: 10em;
 	margin-bottom: 5em;
-	margin-right: 5em;
+	margin-right: 3em;
 }
 
 #palette{
+	margin-top: 5em;
 	margin-left: 5em;
+}
+
+#text{
+	width: 30em;
+	margin-left: -7em;
+	margin-right: 1em;
+	margin-bottom: 3em;
+	text-align: justify;
+}
+
+#items{
+	margin-top: 3.5em;
+}
+
+#tng{
+	margin-left: 2em;
 }
 
 /*images*/
 
 .img{
-	margin-top: 10em;
+	margin-top: 4em;
+	margin-bottom: 3em;
+	width: 15em;
+	height: auto;
+}
+
+#chi{
+	margin-bottom: 2.5em;
+	width: 10em;
+	height: auto;
+}
+
+#henri{
+	margin-right: -1.5em;
+	margin-top: 2em;
+	margin-bottom: 2em;
 	width: 15em;
 	height: auto;
 }
