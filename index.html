@@ -68,7 +68,7 @@
 </div>
 
 <!-- intro -->
-<div class="container w-100" id="idea">
+<div class="container w-100" data-aos="fade-in" id="idea">
 	<div class="row">
 		<div class="col" id="palette">
 			<img src="images/palette.png" class="img">
@@ -96,44 +96,44 @@
 </div>
 <div id="items"></div>
 <!-- CQs-->
-<div class="container w-100">
+<div class="container w-100" data-aos="fade-up">
   <div class="row">
   	<h1>Informal Competency Questions</h1>
   	<hr>
     <div class="col" id="tng">
       <h2>The National Gallery</h2>
       	<img src="images/1916.jpg" class="img">
-      	<p>
-      		BlablaBlablaBlablaBlablaBlablaBlablaBlabla
-      		BlablaBlablaBlablaBlablaBlablaBlablablabla
-    		BlablaBlablaBlablaBlablaBlablaBlablaBlabla
-    		BlablaBlablaBlablaBlablaBlablaBlablaBlabla
-    		BlablaBlablaBlablaBlablaBlablaBlablaBlabla
-    		BlablaBlablaBlablaBlablaBlablaBlablaBlabla
+      	<p onClick= hideAway()>Read me</p>
+      	<p class="imgpar" style="display:none">
+      		● What is the work of art observed? Water Lilies (1916), Irises (1914-17)<br>
+		● What are the main historical sources reporting the use of the mentioned colors? Moisse as Monet's supplier and correspondence between Monet and Durand-Ruel<br>
+		● Does the information obtained from the laboratory conflict with what is reported in the historical sources? A range of samples used to infer the full palette of Water Lilies is similar to Moisse's list except for a significant presence of cobalt blue; Monet's list is not considered reliable<br>
+		● What do Water Lilies and Irises have in common that differentiates them? Luminous white grounds in common. Differences: Irises has two layers of ground, a lower creamy white and a second of lead white. Two binders were used for the Water Lilies colors, one poppy oil and the other flax oil<br>
+		● What is the pigment used comprehensively in the Water Lilies series? Cobalt blue
       	</p>
     </div>
     <div class="col">
       <h2>The Art Institute Of Chicago</h2>
       	<img src="images/1906.jpg" id="chi">
-      	<p>
-      		BlablaBlablaBlablaBlablaBlablaBlablaBlabla
-      		BlablaBlablaBlablaBlablaBlablaBlablablabla
-    		BlablaBlablaBlablaBlablaBlablaBlablaBlabla
-    		BlablaBlablaBlablaBlablaBlablaBlablaBlabla
-    		BlablaBlablaBlablaBlablaBlablaBlablaBlabla
-    		BlablaBlablaBlablaBlablaBlablaBlablaBlabla
+      	<p onClick= hideAway1()>Read me</p>
+      	<p class="imgpar1" style="display:none">
+      		● What is the observed work of art? Water Lilies (1906)<br>
+		● Recover 19th century advances that influenced the way art was made: discovery and commercial production of new pigments on an industrial scale, invention of the metal paint tube, and new equipment for en-plein-air work<br>
+		● Recover the difference between French ultramarine and cobalt blue: 1. typically warmer, reddish blue; 2. appears cooler and more delicate<br>
+		● How did Monet create one of the red flowers? By combining a deep, translucent red lake with a warmed, dull vermilion red
+
       	</p>
     </div>
     <div class="col">
       <h2>Comparison Questions</h2>
       	<img src="images/henri.jpg" id="henri">
-      	<p>
-      		BlablaBlablaBlablaBlablaBlablaBlablaBlabla
-      		BlablaBlablaBlablaBlablaBlablaBlablablabla
-    		BlablaBlablaBlablaBlablaBlablaBlablaBlabla
-    		BlablaBlablaBlablaBlablaBlablaBlablaBlabla
-    		BlablaBlablaBlablaBlablaBlablaBlablaBlabla
-    		BlablaBlablaBlablaBlablaBlablaBlablaBlabla
+      	<p onClick= hideAway2()>Read me</p>
+      	<p class="imgpar2" style="display:none">
+      		● Retrieve the main goals of the papers: National Gallery - historical reconstruction and study of Monet's palette in scientific terms; The Art Institute of Chicago - scientific analysis of Water Lilies (1906) and general description of pigments<br>
+		● What are the methods applied by laboratories to analyze colors from the paintings themselves? National Gallery: in-depth examination of the particle form of a specimen through SEM, use of EDX and scanning; The Art Institute of Chicago: the Conservation and Science labs reports the use of the microscope and various unspecified scientific instruments<br>
+		● Retrieve the palettes of Water Lilies: National gallery - lead white, cobalt violet (light), viridian, cobalt blue, French ultramarine, vermilion, cadmium yellow, zinc/barium yellow; The Art Institute of Chicago - lead white, French ultramarine, red lakes, viridian, cobalt violet<br>
+		● What are the differences between the colors in common? Lead white: both institutes report the opaque property of the color. French ultramarine: both report historical information, TNG informs its use as a single pigment by Monet. Viridian: TNG one of the most frequently used colors by the Impressionists. AIC notes how Monet uses it alone and mixed with other pigments. Both bear the original name "vert émeraude." Cobalt violet: both specify how Monet intended to use this vibrant purple as opposed to other Impressionists who preferred to mix red and blue. In addition TNG reports historical reconstruction.  For all pigments the AIC reports the historical composition of the pigment<br>
+		● How did Monet apply the colors to make the Water Lilies in comparison? Both point out how Monet built up the composition in different painting sessions by overlapping layers upon layers of brushstrokes, dry or wet and in some areas limited to just a few brushstrokes if not a single stroke.
       	</p>
     </div>
   </div>
@@ -143,7 +143,7 @@
 <footer class="footer text-center text-white bg-black">
 	<p id="cont">
 		Contacts <br> <a href="mailto: ludovica.russo4@studio.unibo.it" id="aa">ludovica.russo4@studio.unibo.it</a><br>
-			      <a href="mailto: carmela.santaniello@studio.unibo.it" id="aa">carmela.santaniello@studio.unibo.it</a>
+				 <a href="mailto: carmela.santaniello@studio.unibo.it" id="aa">carmela.santaniello@studio.unibo.it</a>
 	</p>
 	<p id="cop">
 		Copyright<i class="bi bi-c-circle"></i> 2023 nomeprogetto<br>Powered by <a href="https://getbootstrap.com" id="aa"><i class="bi bi-bootstrap"></i></a>
@@ -155,6 +155,11 @@
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 		<script src="js/ripples.js"></script>
+		<script src="js/read.js"></script>
+		<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  		<script>
+    		AOS.init();
+  		</script>
 
   </body>
 </html>
