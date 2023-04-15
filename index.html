@@ -256,7 +256,7 @@
     			<p class="q">QUERY<br>
     						SELECT ?artworkTitle<br>
     						WHERE {<br>
-      							?artwork moc:heldIn moc:The_National_Gallery ;<br>
+      							?artwork moc:heldIn moc:The_Art_Institute_of_Chicago ;<br>
                					moc:hasTitle ?artworkTitle .<br>
     							}
     			</p>
@@ -269,10 +269,12 @@
   			<div class="card-body">
     			<p id="card7">Recover 19th century advances that influenced the way art was made</p>
     			<p class="q">QUERY<br>
-    						SELECT ?artworkTitle<br>
+    						SELECT ?advances<br>
     						WHERE {<br>
-      							?artwork moc:heldIn moc:The_National_Gallery ;<br>
-               					moc:hasTitle ?artworkTitle .<br>
+        						?event rdf:type moc:Event ;<br>
+               					rdfs:label "Changes in the art field"@en ;<br>
+               					moc:hasEvent ?advances .<br>
+        					FILTER (?advances IN (moc:new_pigments, moc:metal_paint_tube, moc:new_equipment))<br>
     							}
     			</p>
 			</div> 
@@ -284,11 +286,15 @@
   			<div class="card-body">
     			<p id="card8">Recover the difference between French ultramarine and cobalt blue</p>
     			<p class="q">QUERY<br>
-    						SELECT ?artworkTitle<br>
-    						WHERE {<br>
-      							?artwork moc:heldIn moc:The_National_Gallery ;<br>
-               					moc:hasTitle ?artworkTitle .<br>
-    							}
+    						SELECT ?french_prop ?cobalt_prop<br>
+							WHERE {<br>
+  								?french a moc:SpecificColor ;<br>
+          						rdfs:label "French ultramarine"@en ;<br>
+         						moc:hasProperty ?french_prop .<br>
+  								?cobalt a moc:SpecificColor ;<br>
+          						rdfs:label "Cobalt blue"@en ;<br>
+          						moc:hasProperty ?cobalt_prop .<br>
+								}
     			</p>
 			</div> 
 			</div>
@@ -299,10 +305,14 @@
   			<div class="card-body">
     			<p id="card9">How did Monet create one of the red flowers?</p>
     			<p class="q">QUERY<br>
-    						SELECT ?artworkTitle<br>
+    						SELECT ?color1 ?color2<br>
     						WHERE {<br>
-      							?artwork moc:heldIn moc:The_National_Gallery ;<br>
-               					moc:hasTitle ?artworkTitle .<br>
+      							?waterlilies rdf:type moc:ArtWorkTitle ;<br>
+                   				moc:hasArtist moc:Monet ;<br>
+                   				moc:hasDetail ?redflowers .<br>
+      							?redflowers rdf:type moc:ArtDetail ;<br>
+                  				moc:hasColor ?color1, ?color2 .<br>
+      						FILTER (?color1 = moc:Vermillion && ?color2 = moc:Red_lake)<br>
     							}
     			</p>
 			</div> 
@@ -362,7 +372,18 @@
     							?specificColor rdfs:label ?SpecificColor .<br>
     							moc:palette1916 rdfs:label ?palette .<br>
   								}<br>
-									}
+									}<br>
+								<br>	
+								SELECT ?color<br>
+    							WHERE {<br>
+      								?palette1 rdf:type moc:ArtTool .<br>
+      								?palette2 rdf:type moc:ArtTool .<br>
+      								?palette1 moc:hasColor ?color .<br>
+      								?palette2 moc:hasColor ?color .<br>
+      							FILTER (?palette1 != ?palette2) <br>
+    									}<br>
+    							GROUP BY ?color<br>
+    							HAVING (COUNT(DISTINCT ?palette1) > 1)
     			</p>
 			</div> 
 			</div>
@@ -373,11 +394,10 @@
   			<div class="card-body">
     			<p id="card13">What is the original name of the color viridian according to the articles?</p>
     			<p class="q">QUERY<br>
-    						SELECT ?artworkTitle<br>
-    						WHERE {<br>
-      							?artwork moc:heldIn moc:The_National_Gallery ;<br>
-               					moc:hasTitle ?artworkTitle .<br>
-    							}
+    						SELECT ?name<br>
+							WHERE {<br>
+  								moc:Viridian moc:hasName ?name .<br>
+								}
     			</p>
 			</div> 
 			</div>
@@ -388,11 +408,13 @@
   			<div class="card-body">
     			<p id="card14">What techniques used Monet to make the Water Lilies?</p>
     			<p class="q">QUERY<br>
-    						SELECT ?artworkTitle<br>
-    						WHERE {<br>
-      							?artwork moc:heldIn moc:The_National_Gallery ;<br>
-               					moc:hasTitle ?artworkTitle .<br>
-    							}
+    						SELECT DISTINCT ?technique<br>
+							WHERE {<br>
+  								?waterlilies rdf:type moc:ArtWorkTitle ;<br>
+               					moc:hasArtist moc:Monet ;<br>
+               					moc:hasTechnique ?technique .<br>
+  								?technique rdf:type moc:ArtTechnique .<br>
+								}
     			</p>
 			</div> 
 			</div>
