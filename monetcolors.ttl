@@ -1,0 +1,2033 @@
+@prefix : <http://www.semanticweb.org/ontologies/2023/1/moc#> .
+@prefix moc: <http://www.semanticweb.org/ontologies/2023/1/moc> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/ontologies/2023/1/moc> .
+
+<http://www.semanticweb.org/ontologies/2023/1/moc> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasArtMovement
+:hasArtMovement rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdf:type owl:SymmetricProperty ;
+                rdfs:domain :WorkOfArt ;
+                rdfs:range :ArtMovement ;
+                rdfs:label "hasArtMovement"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasArtist
+:hasArtist rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdf:type owl:SymmetricProperty ;
+           rdfs:domain :WorkOfArt ;
+           rdfs:range :Artist ;
+           rdfs:label "hasArtist"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasBirthDate
+:hasBirthDate rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdf:type owl:SymmetricProperty ;
+              rdfs:domain :Person ;
+              rdfs:range :DateBirth ;
+              rdfs:label "hasBirthDate"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasBirthPlace
+:hasBirthPlace rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdf:type owl:SymmetricProperty ;
+               rdfs:domain :Person ;
+               rdfs:range :BirthPlace ;
+               rdfs:label "hasBirthPlace"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasClient
+:hasClient rdf:type owl:ObjectProperty ,
+                    owl:SymmetricProperty ;
+           rdfs:domain :Supplier ;
+           rdfs:range :Artist ;
+           rdfs:label "hasClient"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasColor
+:hasColor rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdf:type owl:SymmetricProperty ;
+          rdfs:domain :ArtTool ;
+          rdfs:range :SpecificColor ;
+          rdfs:label "hasColor"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasCreationDate
+:hasCreationDate rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdf:type owl:SymmetricProperty ;
+                 rdfs:domain :WorkOfArt ;
+                 rdfs:range :CreationDate ;
+                 rdfs:label "hasCreationDate"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasDate
+:hasDate rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdf:type owl:SymmetricProperty ;
+         rdfs:domain :WorkOfArt ;
+         rdfs:range :DatePeriod ;
+         rdfs:label "hasDate"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasDetail
+:hasDetail rdf:type owl:ObjectProperty ;
+           rdfs:domain :WorkOfArt ;
+           rdfs:range :ArtDetail ;
+           rdfs:label "hasDetail"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasDifference
+:hasDifference rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdf:type owl:SymmetricProperty ;
+               rdfs:domain :SpecificColor ,
+                           :WorkOfArt ;
+               rdfs:range :SpecificColor ,
+                          :WorkOfArt ;
+               rdfs:label "hasDifference"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasEvent
+:hasEvent rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdf:type owl:SymmetricProperty ;
+          rdfs:domain :Event ;
+          rdfs:range :SpecificEvent ;
+          rdfs:label "hasEvent"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasGoal
+:hasGoal rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdf:type owl:SymmetricProperty ;
+         rdfs:domain :Object ;
+         rdfs:range :Goal ;
+         rdfs:label "hasGoal"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasName
+:hasName rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdf:type owl:SymmetricProperty ;
+         rdfs:domain :Person ;
+         rdfs:range :PersonName ;
+         rdfs:label "hasName"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasObject
+:hasObject rdf:type owl:ObjectProperty ;
+           rdfs:domain :Museum ;
+           rdfs:range :ArtTool ;
+           rdfs:comment "Refers to connection with any object"@en ;
+           rdfs:label "hasObject"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasProperty
+:hasProperty rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :SpecificColor ;
+             rdfs:range :ColorProperty ;
+             rdfs:label "hasProperty"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasRecipient
+:hasRecipient rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdf:type owl:SymmetricProperty ;
+              rdfs:domain :Object ;
+              rdfs:range :Person ;
+              rdfs:label "hasRecipient"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasRole
+:hasRole rdf:type owl:ObjectProperty ,
+                  owl:SymmetricProperty ;
+         rdfs:domain :Person ;
+         rdfs:range :Artist ,
+                    :Supplier ;
+         rdfs:label "hasRole"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasTechnique
+:hasTechnique rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdf:type owl:SymmetricProperty ;
+              rdfs:domain :Museum ,
+                          :WorkOfArt ;
+              rdfs:range :ArtTechnique ,
+                         :LabTechnique ;
+              rdfs:label "hasTechnique"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasTitle
+:hasTitle rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdf:type owl:SymmetricProperty ;
+          rdfs:domain :Object ,
+                      :WorkOfArt ;
+          rdfs:range :ArtWorkTitle ,
+                     :TitleObject ;
+          rdfs:label "hasTitle"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasTitleObject
+:hasTitleObject rdf:type owl:ObjectProperty ;
+                rdfs:domain :Museum ;
+                rdfs:range :TitleObject ;
+                rdfs:label "hasTitleObject"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasTopic
+:hasTopic rdf:type owl:ObjectProperty ,
+                   owl:SymmetricProperty ;
+          rdfs:domain :ArtTopic ;
+          rdfs:range :SpecificColor ;
+          rdfs:label "hasTopic"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasType
+:hasType rdf:type owl:ObjectProperty ,
+                  owl:SymmetricProperty ;
+         rdfs:domain :Object ;
+         rdfs:range :TypeObject ;
+         rdfs:label "hasType"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasTypeGoal
+:hasTypeGoal rdf:type owl:ObjectProperty ,
+                      owl:SymmetricProperty ;
+             rdfs:domain :TitleObject ;
+             rdfs:range :TypeGoal ;
+             rdfs:label "hasTypeGoal"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#heldIn
+:heldIn rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        rdf:type owl:SymmetricProperty ;
+        rdfs:domain :WorkOfArt ;
+        rdfs:range :Museum ;
+        rdfs:label "heldIn"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#isCharacterizedBy
+:isCharacterizedBy rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   rdfs:domain :WorkOfArt ;
+                   rdfs:range :SpecificColor ;
+                   rdfs:label "isCharacterizedBy"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#isPartOf
+:isPartOf rdf:type owl:ObjectProperty ,
+                   owl:SymmetricProperty ;
+          rdfs:domain :MuseumLab ;
+          rdfs:range :Museum ;
+          rdfs:label "isPartOf"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#isSimilarTo
+:isSimilarTo rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdf:type owl:SymmetricProperty ;
+             rdfs:domain :TypeObject ;
+             rdfs:range :TypeObject ;
+             rdfs:label "isSimilarTo"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#isTestedFor
+:isTestedFor rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdf:type owl:SymmetricProperty ;
+             rdfs:domain :TypeObject ;
+             rdfs:range :TypeObject ;
+             rdfs:label "isTestedFor"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#isUsedFor
+:isUsedFor rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdf:type owl:SymmetricProperty ;
+           rdfs:domain :ArtTechnique ,
+                       :ArtTool ,
+                       :Object ;
+           rdfs:range :ArtDetail ,
+                      :Color ,
+                      :WorkOfArt ;
+           rdfs:label "isUsedFor"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#isWriter
+:isWriter rdf:type owl:ObjectProperty ,
+                   owl:SymmetricProperty ;
+          rdfs:domain :PersonName ;
+          rdfs:range :TypeObject ;
+          rdfs:label "isWriter"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#mainElementOf
+:mainElementOf rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdf:type owl:SymmetricProperty ;
+               rdfs:domain :SpecificColor ;
+               rdfs:range :WorkOfArt ;
+               rdfs:label "mainElementOf"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#ArtDetail
+:ArtDetail rdf:type owl:Class ;
+           rdfs:subClassOf :WorkOfArt ;
+           rdfs:label "ArtDetail"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#ArtMovement
+:ArtMovement rdf:type owl:Class ;
+             rdfs:subClassOf :WorkOfArt ;
+             rdfs:comment "Indicates an artistic movement"@en ;
+             rdfs:label "ArtMovement"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#ArtTechnique
+:ArtTechnique rdf:type owl:Class ;
+              rdfs:subClassOf :WorkOfArt ;
+              rdfs:comment "Indicates the technique used to create a work of art"@en ;
+              rdfs:label "ArtTechnique"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#ArtTool
+:ArtTool rdf:type owl:Class ;
+         rdfs:subClassOf :WorkOfArt ;
+         rdfs:comment "Indicates the tools used in the creation of a work of art"@en ;
+         rdfs:label "ArtTool"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#ArtTopic
+:ArtTopic rdf:type owl:Class ;
+          rdfs:subClassOf :WorkOfArt ;
+          rdfs:label "ArtTopic"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#ArtWorkTitle
+:ArtWorkTitle rdf:type owl:Class ;
+              rdfs:subClassOf :WorkOfArt ;
+              rdfs:comment "Indicates the title of the work of art"@en ;
+              rdfs:label "ArtWorkTitle"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#ArtWorkType
+:ArtWorkType rdf:type owl:Class ;
+             rdfs:subClassOf :WorkOfArt ;
+             rdfs:comment "Indicates the type of artwork"@en ;
+             rdfs:label "ArtWorkType"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Artist
+:Artist rdf:type owl:Class ;
+        rdfs:subClassOf :Job .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#BirthPlace
+:BirthPlace rdf:type owl:Class ;
+            rdfs:subClassOf :Person ;
+            rdfs:label "BirthPlace"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Color
+:Color rdf:type owl:Class ;
+       rdfs:label "Color"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#ColorProperty
+:ColorProperty rdf:type owl:Class ;
+               rdfs:subClassOf :SpecificColor ;
+               rdfs:label "ColorProperty"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#CreationDate
+:CreationDate rdf:type owl:Class ;
+              rdfs:subClassOf :Date ;
+              rdfs:label "CreationDate"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Date
+:Date rdf:type owl:Class ;
+      owl:disjointWith :WorkOfArt ;
+      rdfs:label "Date"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#DateBirth
+:DateBirth rdf:type owl:Class ;
+           rdfs:subClassOf :Person ;
+           rdfs:label "DateBirth"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#DatePeriod
+:DatePeriod rdf:type owl:Class ;
+            rdfs:subClassOf :Date ;
+            rdfs:label "DatePeriod"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Event
+:Event rdf:type owl:Class ;
+       rdfs:label "Event"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Goal
+:Goal rdf:type owl:Class ;
+      rdfs:label "Goal"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Institution
+:Institution rdf:type owl:Class ;
+             rdfs:label "Institution"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Job
+:Job rdf:type owl:Class ;
+     rdfs:label "Job"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#LabTechnique
+:LabTechnique rdf:type owl:Class ;
+              rdfs:subClassOf :MuseumLab ;
+              rdfs:label "LabTechnique"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Museum
+:Museum rdf:type owl:Class ;
+        rdfs:subClassOf :Institution ;
+        rdfs:label "Museum"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#MuseumLab
+:MuseumLab rdf:type owl:Class ;
+           rdfs:subClassOf :Museum ;
+           rdfs:label "MuseumLab"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Object
+:Object rdf:type owl:Class ;
+        rdfs:label "Object"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Person
+:Person rdf:type owl:Class ;
+        rdfs:label "Person"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#PersonName
+:PersonName rdf:type owl:Class ;
+            rdfs:subClassOf :Person ;
+            rdfs:comment "Indicates personal name"@en ;
+            rdfs:label "PersonName"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#SpecificColor
+:SpecificColor rdf:type owl:Class ;
+               rdfs:subClassOf :Color ;
+               rdfs:label "SpecificColor"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#SpecificEvent
+:SpecificEvent rdf:type owl:Class ;
+               rdfs:subClassOf :Event ;
+               rdfs:label "SpecificEvent"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Supplier
+:Supplier rdf:type owl:Class ;
+          rdfs:subClassOf :Job .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#TitleObject
+:TitleObject rdf:type owl:Class ;
+             rdfs:subClassOf :Object ;
+             rdfs:label "TitleObject"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#TypeGoal
+:TypeGoal rdf:type owl:Class ;
+          rdfs:subClassOf :Goal ;
+          rdfs:label "TypeGoal"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#TypeObject
+:TypeObject rdf:type owl:Class ;
+            rdfs:subClassOf :Object ;
+            rdfs:label "TypeObject"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#WorkOfArt
+:WorkOfArt rdf:type owl:Class ;
+           rdfs:comment "Indicates a generic artwork"@en ;
+           rdfs:label "WorkOfArt"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Artist
+:Artist rdf:type owl:NamedIndividual ,
+                 :Artist ;
+        :hasName :Monet .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Cadmium_yellow
+:Cadmium_yellow rdf:type owl:NamedIndividual ,
+                         :SpecificColor ;
+                rdfs:label "Cadmium yellow"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Changes_in_the_art_field
+:Changes_in_the_art_field rdf:type owl:NamedIndividual ,
+                                   :Event ;
+                          :hasEvent :metal_paint_tube ,
+                                    :new_equipment ,
+                                    :new_pigments ;
+                          rdfs:label "Changes in the art field"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Cobalt_blue
+:Cobalt_blue rdf:type owl:NamedIndividual ,
+                      :SpecificColor ;
+             :hasProperty :cooler ,
+                          :delicate ;
+             :mainElementOf :WaterLilies ;
+             rdfs:label "Cobalt blue"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Cobalt_violet
+:Cobalt_violet rdf:type owl:NamedIndividual ,
+                        :SpecificColor ;
+               :hasProperty :vibrant ;
+               :hasTopic :historical_reconstruction ,
+                         <http://www.semanticweb.org/ontologies/2023/1/moc#'historical_composition'> ;
+               rdfs:label "Cobalt violet"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Creamy_white
+:Creamy_white rdf:type owl:NamedIndividual ,
+                       :SpecificColor ;
+              rdfs:label "Creamy white"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Durand-Ruel
+:Durand-Ruel rdf:type owl:NamedIndividual ,
+                      :PersonName ;
+             rdfs:label "Durand-Ruel"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Energy_Dispersive_X-Ray
+:Energy_Dispersive_X-Ray rdf:type owl:NamedIndividual ,
+                                  :LabTechnique ;
+                         rdfs:label "Energy Dispersive X-Ray"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#French_ultramarine
+:French_ultramarine rdf:type owl:NamedIndividual ,
+                             :SpecificColor ;
+                    :hasProperty :reddish ,
+                                 :warmer ;
+                    :hasTopic <http://www.semanticweb.org/ontologies/2023/1/moc#'historical_information'> ;
+                    rdfs:label "French ultramarine"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Impressionism
+:Impressionism rdf:type owl:NamedIndividual ,
+                        :ArtMovement ;
+               rdfs:label "Impressionism"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Irises
+:Irises rdf:type owl:NamedIndividual ,
+                 :ArtWorkTitle ,
+                 :WorkOfArt ;
+        :hasArtMovement :Impressionism ;
+        :hasArtist :Monet ;
+        :hasDate <http://www.semanticweb.org/ontologies/2023/1/moc#1914-1917> ;
+        :hasDetail <http://www.semanticweb.org/ontologies/2023/1/moc#'luminous_white_ground'> ,
+                   <http://www.semanticweb.org/ontologies/2023/1/moc#'two_layers_of_ground'> ;
+        :hasTitle :Irises ,
+                  <http://www.semanticweb.org/ontologies/2023/1/moc#'Color,_Chemistry,_and_Creativity_in_Monet's_Water_Lilies'> ;
+        :hasType :painting ;
+        :heldIn :The_National_Gallery ;
+        rdfs:label "Irises"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Lead_white
+:Lead_white rdf:type owl:NamedIndividual ,
+                     :SpecificColor ;
+            :hasProperty :opaque ;
+            :hasTopic <http://www.semanticweb.org/ontologies/2023/1/moc#'historical_composition'> ;
+            rdfs:label "Lead white"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Microscope
+:Microscope rdf:type owl:NamedIndividual ,
+                     :LabTechnique ;
+            rdfs:label "Microscope"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Moisse
+:Moisse rdf:type owl:NamedIndividual ,
+                 :PersonName ;
+        :hasClient :Monet ;
+        :hasRole :Supplier ;
+        :isWriter <http://www.semanticweb.org/ontologies/2023/1/moc#'Moisse's_list'> ;
+        rdfs:label "Moisse"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Monet
+:Monet rdf:type owl:NamedIndividual ,
+                :PersonName ;
+       :hasBirthDate <http://www.semanticweb.org/ontologies/2023/1/moc#'14_November_1840'> ;
+       :hasBirthPlace :Paris ;
+       :hasRole :Artist ;
+       :isWriter :letter ;
+       rdfs:label "Monet"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Paris
+:Paris rdf:type owl:NamedIndividual ,
+                :BirthPlace ;
+       rdfs:label "Paris"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Red_lake
+:Red_lake rdf:type owl:NamedIndividual ,
+                   :SpecificColor ;
+          :hasProperty :translucent ;
+          rdfs:label "Red lake"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Scanning_Electron_Microscopy
+:Scanning_Electron_Microscopy rdf:type owl:NamedIndividual ,
+                                       :LabTechnique ;
+                              rdfs:label "Scanning Electron Microscopy"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Supplier
+:Supplier rdf:type owl:NamedIndividual ,
+                   :Supplier ;
+          :hasName :Moisse .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#The_Art_Institute_of_Chicago
+:The_Art_Institute_of_Chicago rdf:type owl:NamedIndividual ,
+                                       :Museum ;
+                              :hasObject :palette1906 ;
+                              :hasTechnique :Microscope ;
+                              :hasTitleObject <http://www.semanticweb.org/ontologies/2023/1/moc#'Color,_Chemistry,_and_Creativity_in_Monet's_Water_Lilies'> ;
+                              rdfs:label "The Art Institute of Chicago"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#The_Conservation_and_Science_Labs
+:The_Conservation_and_Science_Labs rdf:type owl:NamedIndividual ,
+                                            :MuseumLab ;
+                                   :isPartOf :The_Art_Institute_of_Chicago ;
+                                   rdfs:label "The Conservation and Science Labs"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#The_National_Gallery
+:The_National_Gallery rdf:type owl:NamedIndividual ,
+                               :Museum ;
+                      :hasObject :palette1916 ;
+                      :hasTechnique :Energy_Dispersive_X-Ray ,
+                                    :Scanning_Electron_Microscopy ;
+                      :hasTitleObject <http://www.semanticweb.org/ontologies/2023/1/moc#'Monet's_Palette_in_the_Twentieth_Century:_Water-lilies_and_Irises'> ;
+                      rdfs:label "The National Gallery"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Vermillion
+:Vermillion rdf:type owl:NamedIndividual ,
+                     :SpecificColor ;
+            :hasProperty :dull ,
+                         :warmer ;
+            rdfs:label "Vermillion"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Viridian
+:Viridian rdf:type owl:NamedIndividual ,
+                   :SpecificColor ;
+          :hasName :vertEmeraude ;
+          :hasTopic <http://www.semanticweb.org/ontologies/2023/1/moc#'most_frequently_used'> ;
+          rdfs:label "Viridian"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#WaterLilies
+:WaterLilies rdf:type owl:NamedIndividual ,
+                      :ArtWorkTitle ,
+                      :WorkOfArt ;
+             :hasArtMovement :Impressionism ;
+             :hasArtist :Monet ;
+             :hasCreationDate <http://www.semanticweb.org/ontologies/2023/1/moc#1906> ,
+                              <http://www.semanticweb.org/ontologies/2023/1/moc#1916> ;
+             :hasDetail <http://www.semanticweb.org/ontologies/2023/1/moc#'Two_binders'> ,
+                        <http://www.semanticweb.org/ontologies/2023/1/moc#'luminous_white_ground'> ,
+                        <http://www.semanticweb.org/ontologies/2023/1/moc#'red_flowers'> ;
+             :hasTechnique :brushstrokes ,
+                           <http://www.semanticweb.org/ontologies/2023/1/moc#'overlapping_layers'> ,
+                           <http://www.semanticweb.org/ontologies/2023/1/moc#'single_stroke'> ;
+             :hasTitle :WaterLilies ;
+             :hasType :painting ;
+             :heldIn :The_Art_Institute_of_Chicago ,
+                     :The_National_Gallery ;
+             rdfs:label "WaterLilies"@it .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#article
+:article rdf:type owl:NamedIndividual ,
+                  :Object ;
+         :hasTitle <http://www.semanticweb.org/ontologies/2023/1/moc#'Color,_Chemistry,_and_Creativity_in_Monet's_Water_Lilies'> ,
+                   <http://www.semanticweb.org/ontologies/2023/1/moc#'Monet's_Palette_in_the_Twentieth_Century:_Water-lilies_and_Irises'> ;
+         rdfs:label "Object"@en ,
+                    "article"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#brushstrokes
+:brushstrokes rdf:type owl:NamedIndividual ,
+                       :ArtTechnique ;
+              rdfs:label "brushstrokes"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#cooler
+:cooler rdf:type owl:NamedIndividual ,
+                 :ColorProperty ;
+        rdfs:label "cooler"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#delicate
+:delicate rdf:type owl:NamedIndividual ,
+                   :ColorProperty ;
+          rdfs:label "delicate"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#dull
+:dull rdf:type owl:NamedIndividual ,
+               :ColorProperty ;
+      rdfs:label "dull"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#general_description
+:general_description rdf:type owl:NamedIndividual ,
+                              :TypeGoal ;
+                     rdfs:label "general description"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#historical_reconstruction
+:historical_reconstruction rdf:type owl:NamedIndividual ,
+                                    :TypeGoal ;
+                           rdfs:label "historical reconstruction"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#letter
+:letter rdf:type owl:NamedIndividual ,
+                 :TypeObject ;
+        :hasRecipient :Durand-Ruel ;
+        rdfs:label "letter"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#luminous
+:luminous rdf:type owl:NamedIndividual ,
+                   :ColorProperty ;
+          rdfs:label "luminous"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#metal_paint_tube
+:metal_paint_tube rdf:type owl:NamedIndividual ,
+                           :SpecificEvent ;
+                  rdfs:label "metal paint tube"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#new_equipment
+:new_equipment rdf:type owl:NamedIndividual ,
+                        :SpecificEvent ;
+               rdfs:label "new equipment"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#new_pigments
+:new_pigments rdf:type owl:NamedIndividual ,
+                       :SpecificEvent ;
+              rdfs:label "new pigments"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#oil
+:oil rdf:type owl:NamedIndividual ,
+              :Object ;
+     rdfs:label "oil"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#opaque
+:opaque rdf:type owl:NamedIndividual ,
+                 :ColorProperty ;
+        rdfs:label "opaque"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#painting
+:painting rdf:type owl:NamedIndividual ,
+                   :ArtWorkType ;
+          rdfs:label "painting"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#palette1906
+:palette1906 rdf:type owl:NamedIndividual ,
+                      :ArtTool ;
+             :hasColor :Cobalt_violet ,
+                       :French_ultramarine ,
+                       :Lead_white ,
+                       :Red_lake ,
+                       :Viridian ;
+             :isUsedFor :WaterLilies ;
+             rdfs:label "palette1906"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#palette1916
+:palette1916 rdf:type owl:NamedIndividual ,
+                      :ArtTool ;
+             :hasColor :Cadmium_yellow ,
+                       :Cobalt_blue ,
+                       :Cobalt_violet ,
+                       :French_ultramarine ,
+                       :Lead_white ,
+                       :Vermillion ,
+                       :Viridian ,
+                       <http://www.semanticweb.org/ontologies/2023/1/moc#Zinc/barium_yellow> ;
+             :isUsedFor :WaterLilies ;
+             rdfs:label "palette1916"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#pigments
+:pigments rdf:type owl:NamedIndividual ,
+                   :ArtTool ;
+          :isUsedFor :Irises ,
+                     :WaterLilies ;
+          rdfs:label "pigments"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#reddish
+:reddish rdf:type owl:NamedIndividual ,
+                  :ColorProperty ;
+         rdfs:label "reddish"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#sample
+:sample rdf:type owl:NamedIndividual ,
+                 :TypeObject ;
+        :isSimilarTo <http://www.semanticweb.org/ontologies/2023/1/moc#'Moisse's_list'> ;
+        :isTestedFor :palette1916 ;
+        rdfs:label "sample"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#scientific_analysis
+:scientific_analysis rdf:type owl:NamedIndividual ,
+                              :TypeGoal ;
+                     rdfs:label "scientific analysis"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#scientific_study
+:scientific_study rdf:type owl:NamedIndividual ,
+                           :TypeGoal ;
+                  rdfs:label "scientific study"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#translucent
+:translucent rdf:type owl:NamedIndividual ,
+                      :ColorProperty ;
+             rdfs:label "translucent"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#vertEmeraude
+:vertEmeraude rdf:type owl:NamedIndividual ,
+                       :ColorProperty ;
+              rdfs:label "vertEmeraude"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#vibrant
+:vibrant rdf:type owl:NamedIndividual ,
+                  :ColorProperty ;
+         rdfs:label "vibrant"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#warmer
+:warmer rdf:type owl:NamedIndividual ,
+                 :ColorProperty ;
+        rdfs:label "warmer"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#witness
+:witness rdf:type owl:NamedIndividual ,
+                  :Object ;
+         :hasType :letter ,
+                  :sample ;
+         rdfs:label "witness"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#'14_November_1840'
+<http://www.semanticweb.org/ontologies/2023/1/moc#'14_November_1840'> rdf:type owl:NamedIndividual ,
+                                                                               :DateBirth ;
+                                                                      rdfs:label "14 November 1840"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#'Color,_Chemistry,_and_Creativity_in_Monet's_Water_Lilies'
+<http://www.semanticweb.org/ontologies/2023/1/moc#'Color,_Chemistry,_and_Creativity_in_Monet's_Water_Lilies'> rdf:type owl:NamedIndividual ,
+                                                                                                                       :TitleObject ;
+                                                                                                              :hasTopic :vertEmeraude ;
+                                                                                                              :hasTypeGoal :general_description ,
+                                                                                                                           :scientific_study ;
+                                                                                                              rdfs:label "Color, Chemistry, and Creativity in Monet's Water Lilies"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#'Moisse's_list'
+<http://www.semanticweb.org/ontologies/2023/1/moc#'Moisse's_list'> rdf:type owl:NamedIndividual ,
+                                                                            :TypeObject ;
+                                                                   rdfs:label "Moisse's list"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#'Monet's_Palette_in_the_Twentieth_Century:_Water-lilies_and_Irises'
+<http://www.semanticweb.org/ontologies/2023/1/moc#'Monet's_Palette_in_the_Twentieth_Century:_Water-lilies_and_Irises'> rdf:type owl:NamedIndividual ,
+                                                                                                                                :TitleObject ;
+                                                                                                                       :hasTopic :vertEmeraude ;
+                                                                                                                       :hasTypeGoal :historical_reconstruction ,
+                                                                                                                                    :scientific_analysis ;
+                                                                                                                       rdfs:label "Monet's Palette in the Twentieth Century: Water-lilies and Irises"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#'Two_binders'
+<http://www.semanticweb.org/ontologies/2023/1/moc#'Two_binders'> rdf:type owl:NamedIndividual ,
+                                                                          :ArtDetail ;
+                                                                 :isPartOf :WaterLilies ;
+                                                                 rdfs:label "Two binders"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#'historical_composition'
+<http://www.semanticweb.org/ontologies/2023/1/moc#'historical_composition'> rdf:type owl:NamedIndividual ,
+                                                                                     :ArtTopic ;
+                                                                            rdfs:label "historical composition"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#'historical_information'
+<http://www.semanticweb.org/ontologies/2023/1/moc#'historical_information'> rdf:type owl:NamedIndividual ,
+                                                                                     :ArtTopic ;
+                                                                            :hasTopic <http://www.semanticweb.org/ontologies/2023/1/moc#'historical_composition'> ;
+                                                                            rdfs:label "historical information"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#'historical_reconstruction'
+<http://www.semanticweb.org/ontologies/2023/1/moc#'historical_reconstruction'> rdf:type owl:NamedIndividual ,
+                                                                                        :ArtTopic ;
+                                                                               rdfs:label "historical reconstruction"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#'luminous_white_ground'
+<http://www.semanticweb.org/ontologies/2023/1/moc#'luminous_white_ground'> rdf:type owl:NamedIndividual ,
+                                                                                    :ArtDetail ;
+                                                                           :isPartOf :Irises ,
+                                                                                     :WaterLilies ;
+                                                                           rdfs:label "luminous white ground"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#'most_frequently_used'
+<http://www.semanticweb.org/ontologies/2023/1/moc#'most_frequently_used'> rdf:type owl:NamedIndividual ,
+                                                                                   :ArtTopic ;
+                                                                          rdfs:label "most frequently used"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#'overlapping_layers'
+<http://www.semanticweb.org/ontologies/2023/1/moc#'overlapping_layers'> rdf:type owl:NamedIndividual ,
+                                                                                 :ArtTechnique ;
+                                                                        rdfs:label "overlapping layers"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#'red_flowers'
+<http://www.semanticweb.org/ontologies/2023/1/moc#'red_flowers'> rdf:type owl:NamedIndividual ,
+                                                                          :ArtDetail ;
+                                                                 :hasColor :Red_lake ,
+                                                                           :Vermillion ;
+                                                                 :isPartOf :WaterLilies ;
+                                                                 rdfs:label "red flowers"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#'single_stroke'
+<http://www.semanticweb.org/ontologies/2023/1/moc#'single_stroke'> rdf:type owl:NamedIndividual ,
+                                                                            :ArtTechnique ;
+                                                                   rdfs:label "single stroke"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#'two_layers_of_ground'
+<http://www.semanticweb.org/ontologies/2023/1/moc#'two_layers_of_ground'> rdf:type owl:NamedIndividual ,
+                                                                                   :ArtDetail ;
+                                                                          :isPartOf :Irises ;
+                                                                          rdfs:label "two layers of ground"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#1906
+<http://www.semanticweb.org/ontologies/2023/1/moc#1906> rdf:type owl:NamedIndividual ,
+                                                                 :CreationDate ;
+                                                        rdfs:label "1906"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#1914-1917
+<http://www.semanticweb.org/ontologies/2023/1/moc#1914-1917> rdf:type owl:NamedIndividual ,
+                                                                      :DatePeriod ;
+                                                             rdfs:label "1914-1917"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#1916
+<http://www.semanticweb.org/ontologies/2023/1/moc#1916> rdf:type owl:NamedIndividual ,
+                                                                 :CreationDate ;
+                                                        rdfs:label "1916"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Zinc/barium_yellow
+<http://www.semanticweb.org/ontologies/2023/1/moc#Zinc/barium_yellow> rdf:type owl:NamedIndividual ,
+                                                                               :SpecificColor ;
+                                                                      rdfs:label "Zinc/barium yellow"@en .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+:Artist rdfs:label "Artist"@en .
+
+
+:Supplier rdfs:label "Supplier"@en .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi@prefix : <http://www.semanticweb.org/ontologies/2023/1/moc#> .
+@prefix moc: <http://www.semanticweb.org/ontologies/2023/1/moc> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/ontologies/2023/1/moc> .
+
+<http://www.semanticweb.org/ontologies/2023/1/moc> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasArtMovement
+:hasArtMovement rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdf:type owl:SymmetricProperty ;
+                rdfs:domain :WorkOfArt ;
+                rdfs:range :ArtMovement ;
+                rdfs:label "hasArtMovement"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasArtist
+:hasArtist rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdf:type owl:SymmetricProperty ;
+           rdfs:domain :WorkOfArt ;
+           rdfs:range :Artist ;
+           rdfs:label "hasArtist"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasBirthDate
+:hasBirthDate rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdf:type owl:SymmetricProperty ;
+              rdfs:domain :Person ;
+              rdfs:range :DateBirth ;
+              rdfs:label "hasBirthDate"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasBirthPlace
+:hasBirthPlace rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdf:type owl:SymmetricProperty ;
+               rdfs:domain :Person ;
+               rdfs:range :BirthPlace ;
+               rdfs:label "hasBirthPlace"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasClient
+:hasClient rdf:type owl:ObjectProperty ,
+                    owl:SymmetricProperty ;
+           rdfs:domain :Supplier ;
+           rdfs:range :Artist ;
+           rdfs:label "hasClient"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasColor
+:hasColor rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdf:type owl:SymmetricProperty ;
+          rdfs:domain :ArtTool ;
+          rdfs:range :SpecificColor ;
+          rdfs:label "hasColor"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasCreationDate
+:hasCreationDate rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdf:type owl:SymmetricProperty ;
+                 rdfs:domain :WorkOfArt ;
+                 rdfs:range :CreationDate ;
+                 rdfs:label "hasCreationDate"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasDate
+:hasDate rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdf:type owl:SymmetricProperty ;
+         rdfs:domain :WorkOfArt ;
+         rdfs:range :DatePeriod ;
+         rdfs:label "hasDate"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasDetail
+:hasDetail rdf:type owl:ObjectProperty ;
+           rdfs:domain :WorkOfArt ;
+           rdfs:range :ArtDetail ;
+           rdfs:label "hasDetail"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasDifference
+:hasDifference rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdf:type owl:SymmetricProperty ;
+               rdfs:domain :SpecificColor ,
+                           :WorkOfArt ;
+               rdfs:range :SpecificColor ,
+                          :WorkOfArt ;
+               rdfs:label "hasDifference"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasEvent
+:hasEvent rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdf:type owl:SymmetricProperty ;
+          rdfs:domain :Event ;
+          rdfs:range :SpecificEvent ;
+          rdfs:label "hasEvent"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasGoal
+:hasGoal rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdf:type owl:SymmetricProperty ;
+         rdfs:domain :Object ;
+         rdfs:range :Goal ;
+         rdfs:label "hasGoal"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasName
+:hasName rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdf:type owl:SymmetricProperty ;
+         rdfs:domain :Person ;
+         rdfs:range :PersonName ;
+         rdfs:label "hasName"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasObject
+:hasObject rdf:type owl:ObjectProperty ;
+           rdfs:domain :Museum ;
+           rdfs:range :ArtTool ;
+           rdfs:comment "Refers to connection with any object"@en ;
+           rdfs:label "hasObject"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasProperty
+:hasProperty rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :SpecificColor ;
+             rdfs:range :ColorProperty ;
+             rdfs:label "hasProperty"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasRecipient
+:hasRecipient rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdf:type owl:SymmetricProperty ;
+              rdfs:domain :Object ;
+              rdfs:range :Person ;
+              rdfs:label "hasRecipient"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasRole
+:hasRole rdf:type owl:ObjectProperty ,
+                  owl:SymmetricProperty ;
+         rdfs:domain :Person ;
+         rdfs:range :Artist ,
+                    :Supplier ;
+         rdfs:label "hasRole"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasTechnique
+:hasTechnique rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdf:type owl:SymmetricProperty ;
+              rdfs:domain :Museum ,
+                          :WorkOfArt ;
+              rdfs:range :ArtTechnique ,
+                         :LabTechnique ;
+              rdfs:label "hasTechnique"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasTitle
+:hasTitle rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdf:type owl:SymmetricProperty ;
+          rdfs:domain :Object ,
+                      :WorkOfArt ;
+          rdfs:range :ArtWorkTitle ,
+                     :TitleObject ;
+          rdfs:label "hasTitle"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasTitleObject
+:hasTitleObject rdf:type owl:ObjectProperty ;
+                rdfs:domain :Museum ;
+                rdfs:range :TitleObject ;
+                rdfs:label "hasTitleObject"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasTopic
+:hasTopic rdf:type owl:ObjectProperty ,
+                   owl:SymmetricProperty ;
+          rdfs:domain :ArtTopic ;
+          rdfs:range :SpecificColor ;
+          rdfs:label "hasTopic"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasType
+:hasType rdf:type owl:ObjectProperty ,
+                  owl:SymmetricProperty ;
+         rdfs:domain :Object ;
+         rdfs:range :TypeObject ;
+         rdfs:label "hasType"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#hasTypeGoal
+:hasTypeGoal rdf:type owl:ObjectProperty ,
+                      owl:SymmetricProperty ;
+             rdfs:domain :TitleObject ;
+             rdfs:range :TypeGoal ;
+             rdfs:label "hasTypeGoal"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#heldIn
+:heldIn rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        rdf:type owl:SymmetricProperty ;
+        rdfs:domain :WorkOfArt ;
+        rdfs:range :Museum ;
+        rdfs:label "heldIn"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#isCharacterizedBy
+:isCharacterizedBy rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   rdfs:domain :WorkOfArt ;
+                   rdfs:range :SpecificColor ;
+                   rdfs:label "isCharacterizedBy"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#isPartOf
+:isPartOf rdf:type owl:ObjectProperty ,
+                   owl:SymmetricProperty ;
+          rdfs:domain :MuseumLab ;
+          rdfs:range :Museum ;
+          rdfs:label "isPartOf"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#isSimilarTo
+:isSimilarTo rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdf:type owl:SymmetricProperty ;
+             rdfs:domain :TypeObject ;
+             rdfs:range :TypeObject ;
+             rdfs:label "isSimilarTo"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#isTestedFor
+:isTestedFor rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdf:type owl:SymmetricProperty ;
+             rdfs:domain :TypeObject ;
+             rdfs:range :TypeObject ;
+             rdfs:label "isTestedFor"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#isUsedFor
+:isUsedFor rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdf:type owl:SymmetricProperty ;
+           rdfs:domain :ArtTechnique ,
+                       :ArtTool ,
+                       :Object ;
+           rdfs:range :ArtDetail ,
+                      :Color ,
+                      :WorkOfArt ;
+           rdfs:label "isUsedFor"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#isWriter
+:isWriter rdf:type owl:ObjectProperty ,
+                   owl:SymmetricProperty ;
+          rdfs:domain :PersonName ;
+          rdfs:range :TypeObject ;
+          rdfs:label "isWriter"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#mainElementOf
+:mainElementOf rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdf:type owl:SymmetricProperty ;
+               rdfs:domain :SpecificColor ;
+               rdfs:range :WorkOfArt ;
+               rdfs:label "mainElementOf"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#ArtDetail
+:ArtDetail rdf:type owl:Class ;
+           rdfs:subClassOf :WorkOfArt ;
+           rdfs:label "ArtDetail"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#ArtMovement
+:ArtMovement rdf:type owl:Class ;
+             rdfs:subClassOf :WorkOfArt ;
+             rdfs:comment "Indicates an artistic movement"@en ;
+             rdfs:label "ArtMovement"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#ArtTechnique
+:ArtTechnique rdf:type owl:Class ;
+              rdfs:subClassOf :WorkOfArt ;
+              rdfs:comment "Indicates the technique used to create a work of art"@en ;
+              rdfs:label "ArtTechnique"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#ArtTool
+:ArtTool rdf:type owl:Class ;
+         rdfs:subClassOf :WorkOfArt ;
+         rdfs:comment "Indicates the tools used in the creation of a work of art"@en ;
+         rdfs:label "ArtTool"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#ArtTopic
+:ArtTopic rdf:type owl:Class ;
+          rdfs:subClassOf :WorkOfArt ;
+          rdfs:label "ArtTopic"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#ArtWorkTitle
+:ArtWorkTitle rdf:type owl:Class ;
+              rdfs:subClassOf :WorkOfArt ;
+              rdfs:comment "Indicates the title of the work of art"@en ;
+              rdfs:label "ArtWorkTitle"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#ArtWorkType
+:ArtWorkType rdf:type owl:Class ;
+             rdfs:subClassOf :WorkOfArt ;
+             rdfs:comment "Indicates the type of artwork"@en ;
+             rdfs:label "ArtWorkType"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Artist
+:Artist rdf:type owl:Class ;
+        rdfs:subClassOf :Job .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#BirthPlace
+:BirthPlace rdf:type owl:Class ;
+            rdfs:subClassOf :Person ;
+            rdfs:label "BirthPlace"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Color
+:Color rdf:type owl:Class ;
+       rdfs:label "Color"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#ColorProperty
+:ColorProperty rdf:type owl:Class ;
+               rdfs:subClassOf :SpecificColor ;
+               rdfs:label "ColorProperty"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#CreationDate
+:CreationDate rdf:type owl:Class ;
+              rdfs:subClassOf :Date ;
+              rdfs:label "CreationDate"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Date
+:Date rdf:type owl:Class ;
+      owl:disjointWith :WorkOfArt ;
+      rdfs:label "Date"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#DateBirth
+:DateBirth rdf:type owl:Class ;
+           rdfs:subClassOf :Person ;
+           rdfs:label "DateBirth"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#DatePeriod
+:DatePeriod rdf:type owl:Class ;
+            rdfs:subClassOf :Date ;
+            rdfs:label "DatePeriod"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Event
+:Event rdf:type owl:Class ;
+       rdfs:label "Event"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Goal
+:Goal rdf:type owl:Class ;
+      rdfs:label "Goal"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Institution
+:Institution rdf:type owl:Class ;
+             rdfs:label "Institution"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Job
+:Job rdf:type owl:Class ;
+     rdfs:label "Job"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#LabTechnique
+:LabTechnique rdf:type owl:Class ;
+              rdfs:subClassOf :MuseumLab ;
+              rdfs:label "LabTechnique"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Museum
+:Museum rdf:type owl:Class ;
+        rdfs:subClassOf :Institution ;
+        rdfs:label "Museum"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#MuseumLab
+:MuseumLab rdf:type owl:Class ;
+           rdfs:subClassOf :Museum ;
+           rdfs:label "MuseumLab"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Object
+:Object rdf:type owl:Class ;
+        rdfs:label "Object"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Person
+:Person rdf:type owl:Class ;
+        rdfs:label "Person"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#PersonName
+:PersonName rdf:type owl:Class ;
+            rdfs:subClassOf :Person ;
+            rdfs:comment "Indicates personal name"@en ;
+            rdfs:label "PersonName"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#SpecificColor
+:SpecificColor rdf:type owl:Class ;
+               rdfs:subClassOf :Color ;
+               rdfs:label "SpecificColor"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#SpecificEvent
+:SpecificEvent rdf:type owl:Class ;
+               rdfs:subClassOf :Event ;
+               rdfs:label "SpecificEvent"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Supplier
+:Supplier rdf:type owl:Class ;
+          rdfs:subClassOf :Job .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#TitleObject
+:TitleObject rdf:type owl:Class ;
+             rdfs:subClassOf :Object ;
+             rdfs:label "TitleObject"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#TypeGoal
+:TypeGoal rdf:type owl:Class ;
+          rdfs:subClassOf :Goal ;
+          rdfs:label "TypeGoal"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#TypeObject
+:TypeObject rdf:type owl:Class ;
+            rdfs:subClassOf :Object ;
+            rdfs:label "TypeObject"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#WorkOfArt
+:WorkOfArt rdf:type owl:Class ;
+           rdfs:comment "Indicates a generic artwork"@en ;
+           rdfs:label "WorkOfArt"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Artist
+:Artist rdf:type owl:NamedIndividual ,
+                 :Artist ;
+        :hasName :Monet .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Cadmium_yellow
+:Cadmium_yellow rdf:type owl:NamedIndividual ,
+                         :SpecificColor ;
+                rdfs:label "Cadmium yellow"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Changes_in_the_art_field
+:Changes_in_the_art_field rdf:type owl:NamedIndividual ,
+                                   :Event ;
+                          :hasEvent :metal_paint_tube ,
+                                    :new_equipment ,
+                                    :new_pigments ;
+                          rdfs:label "Changes in the art field"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Cobalt_blue
+:Cobalt_blue rdf:type owl:NamedIndividual ,
+                      :SpecificColor ;
+             :hasProperty :cooler ,
+                          :delicate ;
+             :mainElementOf :WaterLilies ;
+             rdfs:label "Cobalt blue"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Cobalt_violet
+:Cobalt_violet rdf:type owl:NamedIndividual ,
+                        :SpecificColor ;
+               :hasProperty :vibrant ;
+               :hasTopic :historical_reconstruction ,
+                         <http://www.semanticweb.org/ontologies/2023/1/moc#'historical_composition'> ;
+               rdfs:label "Cobalt violet"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Creamy_white
+:Creamy_white rdf:type owl:NamedIndividual ,
+                       :SpecificColor ;
+              rdfs:label "Creamy white"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Durand-Ruel
+:Durand-Ruel rdf:type owl:NamedIndividual ,
+                      :PersonName ;
+             rdfs:label "Durand-Ruel"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Energy_Dispersive_X-Ray
+:Energy_Dispersive_X-Ray rdf:type owl:NamedIndividual ,
+                                  :LabTechnique ;
+                         rdfs:label "Energy Dispersive X-Ray"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#French_ultramarine
+:French_ultramarine rdf:type owl:NamedIndividual ,
+                             :SpecificColor ;
+                    :hasProperty :reddish ,
+                                 :warmer ;
+                    :hasTopic <http://www.semanticweb.org/ontologies/2023/1/moc#'historical_information'> ;
+                    rdfs:label "French ultramarine"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Impressionism
+:Impressionism rdf:type owl:NamedIndividual ,
+                        :ArtMovement ;
+               rdfs:label "Impressionism"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Irises
+:Irises rdf:type owl:NamedIndividual ,
+                 :ArtWorkTitle ,
+                 :WorkOfArt ;
+        :hasArtMovement :Impressionism ;
+        :hasArtist :Monet ;
+        :hasDate <http://www.semanticweb.org/ontologies/2023/1/moc#1914-1917> ;
+        :hasDetail <http://www.semanticweb.org/ontologies/2023/1/moc#'luminous_white_ground'> ,
+                   <http://www.semanticweb.org/ontologies/2023/1/moc#'two_layers_of_ground'> ;
+        :hasTitle :Irises ,
+                  <http://www.semanticweb.org/ontologies/2023/1/moc#'Color,_Chemistry,_and_Creativity_in_Monet's_Water_Lilies'> ;
+        :hasType :painting ;
+        :heldIn :The_National_Gallery ;
+        rdfs:label "Irises"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Lead_white
+:Lead_white rdf:type owl:NamedIndividual ,
+                     :SpecificColor ;
+            :hasProperty :opaque ;
+            :hasTopic <http://www.semanticweb.org/ontologies/2023/1/moc#'historical_composition'> ;
+            rdfs:label "Lead white"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Microscope
+:Microscope rdf:type owl:NamedIndividual ,
+                     :LabTechnique ;
+            rdfs:label "Microscope"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Moisse
+:Moisse rdf:type owl:NamedIndividual ,
+                 :PersonName ;
+        :hasClient :Monet ;
+        :hasRole :Supplier ;
+        :isWriter <http://www.semanticweb.org/ontologies/2023/1/moc#'Moisse's_list'> ;
+        rdfs:label "Moisse"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Monet
+:Monet rdf:type owl:NamedIndividual ,
+                :PersonName ;
+       :hasBirthDate <http://www.semanticweb.org/ontologies/2023/1/moc#'14_November_1840'> ;
+       :hasBirthPlace :Paris ;
+       :hasRole :Artist ;
+       :isWriter :letter ;
+       rdfs:label "Monet"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Paris
+:Paris rdf:type owl:NamedIndividual ,
+                :BirthPlace ;
+       rdfs:label "Paris"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Red_lake
+:Red_lake rdf:type owl:NamedIndividual ,
+                   :SpecificColor ;
+          :hasProperty :translucent ;
+          rdfs:label "Red lake"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Scanning_Electron_Microscopy
+:Scanning_Electron_Microscopy rdf:type owl:NamedIndividual ,
+                                       :LabTechnique ;
+                              rdfs:label "Scanning Electron Microscopy"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Supplier
+:Supplier rdf:type owl:NamedIndividual ,
+                   :Supplier ;
+          :hasName :Moisse .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#The_Art_Institute_of_Chicago
+:The_Art_Institute_of_Chicago rdf:type owl:NamedIndividual ,
+                                       :Museum ;
+                              :hasObject :palette1906 ;
+                              :hasTechnique :Microscope ;
+                              :hasTitleObject <http://www.semanticweb.org/ontologies/2023/1/moc#'Color,_Chemistry,_and_Creativity_in_Monet's_Water_Lilies'> ;
+                              rdfs:label "The Art Institute of Chicago"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#The_Conservation_and_Science_Labs
+:The_Conservation_and_Science_Labs rdf:type owl:NamedIndividual ,
+                                            :MuseumLab ;
+                                   :isPartOf :The_Art_Institute_of_Chicago ;
+                                   rdfs:label "The Conservation and Science Labs"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#The_National_Gallery
+:The_National_Gallery rdf:type owl:NamedIndividual ,
+                               :Museum ;
+                      :hasObject :palette1916 ;
+                      :hasTechnique :Energy_Dispersive_X-Ray ,
+                                    :Scanning_Electron_Microscopy ;
+                      :hasTitleObject <http://www.semanticweb.org/ontologies/2023/1/moc#'Monet's_Palette_in_the_Twentieth_Century:_Water-lilies_and_Irises'> ;
+                      rdfs:label "The National Gallery"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Vermillion
+:Vermillion rdf:type owl:NamedIndividual ,
+                     :SpecificColor ;
+            :hasProperty :dull ,
+                         :warmer ;
+            rdfs:label "Vermillion"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Viridian
+:Viridian rdf:type owl:NamedIndividual ,
+                   :SpecificColor ;
+          :hasName :vertEmeraude ;
+          :hasTopic <http://www.semanticweb.org/ontologies/2023/1/moc#'most_frequently_used'> ;
+          rdfs:label "Viridian"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#WaterLilies
+:WaterLilies rdf:type owl:NamedIndividual ,
+                      :ArtWorkTitle ,
+                      :WorkOfArt ;
+             :hasArtMovement :Impressionism ;
+             :hasArtist :Monet ;
+             :hasCreationDate <http://www.semanticweb.org/ontologies/2023/1/moc#1906> ,
+                              <http://www.semanticweb.org/ontologies/2023/1/moc#1916> ;
+             :hasDetail <http://www.semanticweb.org/ontologies/2023/1/moc#'Two_binders'> ,
+                        <http://www.semanticweb.org/ontologies/2023/1/moc#'luminous_white_ground'> ,
+                        <http://www.semanticweb.org/ontologies/2023/1/moc#'red_flowers'> ;
+             :hasTechnique :brushstrokes ,
+                           <http://www.semanticweb.org/ontologies/2023/1/moc#'overlapping_layers'> ,
+                           <http://www.semanticweb.org/ontologies/2023/1/moc#'single_stroke'> ;
+             :hasTitle :WaterLilies ;
+             :hasType :painting ;
+             :heldIn :The_Art_Institute_of_Chicago ,
+                     :The_National_Gallery ;
+             rdfs:label "WaterLilies"@it .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#article
+:article rdf:type owl:NamedIndividual ,
+                  :Object ;
+         :hasTitle <http://www.semanticweb.org/ontologies/2023/1/moc#'Color,_Chemistry,_and_Creativity_in_Monet's_Water_Lilies'> ,
+                   <http://www.semanticweb.org/ontologies/2023/1/moc#'Monet's_Palette_in_the_Twentieth_Century:_Water-lilies_and_Irises'> ;
+         rdfs:label "Object"@en ,
+                    "article"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#brushstrokes
+:brushstrokes rdf:type owl:NamedIndividual ,
+                       :ArtTechnique ;
+              rdfs:label "brushstrokes"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#cooler
+:cooler rdf:type owl:NamedIndividual ,
+                 :ColorProperty ;
+        rdfs:label "cooler"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#delicate
+:delicate rdf:type owl:NamedIndividual ,
+                   :ColorProperty ;
+          rdfs:label "delicate"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#dull
+:dull rdf:type owl:NamedIndividual ,
+               :ColorProperty ;
+      rdfs:label "dull"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#general_description
+:general_description rdf:type owl:NamedIndividual ,
+                              :TypeGoal ;
+                     rdfs:label "general description"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#historical_reconstruction
+:historical_reconstruction rdf:type owl:NamedIndividual ,
+                                    :TypeGoal ;
+                           rdfs:label "historical reconstruction"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#letter
+:letter rdf:type owl:NamedIndividual ,
+                 :TypeObject ;
+        :hasRecipient :Durand-Ruel ;
+        rdfs:label "letter"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#luminous
+:luminous rdf:type owl:NamedIndividual ,
+                   :ColorProperty ;
+          rdfs:label "luminous"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#metal_paint_tube
+:metal_paint_tube rdf:type owl:NamedIndividual ,
+                           :SpecificEvent ;
+                  rdfs:label "metal paint tube"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#new_equipment
+:new_equipment rdf:type owl:NamedIndividual ,
+                        :SpecificEvent ;
+               rdfs:label "new equipment"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#new_pigments
+:new_pigments rdf:type owl:NamedIndividual ,
+                       :SpecificEvent ;
+              rdfs:label "new pigments"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#oil
+:oil rdf:type owl:NamedIndividual ,
+              :Object ;
+     rdfs:label "oil"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#opaque
+:opaque rdf:type owl:NamedIndividual ,
+                 :ColorProperty ;
+        rdfs:label "opaque"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#painting
+:painting rdf:type owl:NamedIndividual ,
+                   :ArtWorkType ;
+          rdfs:label "painting"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#palette1906
+:palette1906 rdf:type owl:NamedIndividual ,
+                      :ArtTool ;
+             :hasColor :Cobalt_violet ,
+                       :French_ultramarine ,
+                       :Lead_white ,
+                       :Red_lake ,
+                       :Viridian ;
+             :isUsedFor :WaterLilies ;
+             rdfs:label "palette1906"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#palette1916
+:palette1916 rdf:type owl:NamedIndividual ,
+                      :ArtTool ;
+             :hasColor :Cadmium_yellow ,
+                       :Cobalt_blue ,
+                       :Cobalt_violet ,
+                       :French_ultramarine ,
+                       :Lead_white ,
+                       :Vermillion ,
+                       :Viridian ,
+                       <http://www.semanticweb.org/ontologies/2023/1/moc#Zinc/barium_yellow> ;
+             :isUsedFor :WaterLilies ;
+             rdfs:label "palette1916"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#pigments
+:pigments rdf:type owl:NamedIndividual ,
+                   :ArtTool ;
+          :isUsedFor :Irises ,
+                     :WaterLilies ;
+          rdfs:label "pigments"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#reddish
+:reddish rdf:type owl:NamedIndividual ,
+                  :ColorProperty ;
+         rdfs:label "reddish"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#sample
+:sample rdf:type owl:NamedIndividual ,
+                 :TypeObject ;
+        :isSimilarTo <http://www.semanticweb.org/ontologies/2023/1/moc#'Moisse's_list'> ;
+        :isTestedFor :palette1916 ;
+        rdfs:label "sample"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#scientific_analysis
+:scientific_analysis rdf:type owl:NamedIndividual ,
+                              :TypeGoal ;
+                     rdfs:label "scientific analysis"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#scientific_study
+:scientific_study rdf:type owl:NamedIndividual ,
+                           :TypeGoal ;
+                  rdfs:label "scientific study"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#translucent
+:translucent rdf:type owl:NamedIndividual ,
+                      :ColorProperty ;
+             rdfs:label "translucent"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#vertEmeraude
+:vertEmeraude rdf:type owl:NamedIndividual ,
+                       :ColorProperty ;
+              rdfs:label "vertEmeraude"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#vibrant
+:vibrant rdf:type owl:NamedIndividual ,
+                  :ColorProperty ;
+         rdfs:label "vibrant"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#warmer
+:warmer rdf:type owl:NamedIndividual ,
+                 :ColorProperty ;
+        rdfs:label "warmer"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#witness
+:witness rdf:type owl:NamedIndividual ,
+                  :Object ;
+         :hasType :letter ,
+                  :sample ;
+         rdfs:label "witness"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#'14_November_1840'
+<http://www.semanticweb.org/ontologies/2023/1/moc#'14_November_1840'> rdf:type owl:NamedIndividual ,
+                                                                               :DateBirth ;
+                                                                      rdfs:label "14 November 1840"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#'Color,_Chemistry,_and_Creativity_in_Monet's_Water_Lilies'
+<http://www.semanticweb.org/ontologies/2023/1/moc#'Color,_Chemistry,_and_Creativity_in_Monet's_Water_Lilies'> rdf:type owl:NamedIndividual ,
+                                                                                                                       :TitleObject ;
+                                                                                                              :hasTopic :vertEmeraude ;
+                                                                                                              :hasTypeGoal :general_description ,
+                                                                                                                           :scientific_study ;
+                                                                                                              rdfs:label "Color, Chemistry, and Creativity in Monet's Water Lilies"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#'Moisse's_list'
+<http://www.semanticweb.org/ontologies/2023/1/moc#'Moisse's_list'> rdf:type owl:NamedIndividual ,
+                                                                            :TypeObject ;
+                                                                   rdfs:label "Moisse's list"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#'Monet's_Palette_in_the_Twentieth_Century:_Water-lilies_and_Irises'
+<http://www.semanticweb.org/ontologies/2023/1/moc#'Monet's_Palette_in_the_Twentieth_Century:_Water-lilies_and_Irises'> rdf:type owl:NamedIndividual ,
+                                                                                                                                :TitleObject ;
+                                                                                                                       :hasTopic :vertEmeraude ;
+                                                                                                                       :hasTypeGoal :historical_reconstruction ,
+                                                                                                                                    :scientific_analysis ;
+                                                                                                                       rdfs:label "Monet's Palette in the Twentieth Century: Water-lilies and Irises"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#'Two_binders'
+<http://www.semanticweb.org/ontologies/2023/1/moc#'Two_binders'> rdf:type owl:NamedIndividual ,
+                                                                          :ArtDetail ;
+                                                                 :isPartOf :WaterLilies ;
+                                                                 rdfs:label "Two binders"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#'historical_composition'
+<http://www.semanticweb.org/ontologies/2023/1/moc#'historical_composition'> rdf:type owl:NamedIndividual ,
+                                                                                     :ArtTopic ;
+                                                                            rdfs:label "historical composition"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#'historical_information'
+<http://www.semanticweb.org/ontologies/2023/1/moc#'historical_information'> rdf:type owl:NamedIndividual ,
+                                                                                     :ArtTopic ;
+                                                                            :hasTopic <http://www.semanticweb.org/ontologies/2023/1/moc#'historical_composition'> ;
+                                                                            rdfs:label "historical information"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#'historical_reconstruction'
+<http://www.semanticweb.org/ontologies/2023/1/moc#'historical_reconstruction'> rdf:type owl:NamedIndividual ,
+                                                                                        :ArtTopic ;
+                                                                               rdfs:label "historical reconstruction"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#'luminous_white_ground'
+<http://www.semanticweb.org/ontologies/2023/1/moc#'luminous_white_ground'> rdf:type owl:NamedIndividual ,
+                                                                                    :ArtDetail ;
+                                                                           :isPartOf :Irises ,
+                                                                                     :WaterLilies ;
+                                                                           rdfs:label "luminous white ground"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#'most_frequently_used'
+<http://www.semanticweb.org/ontologies/2023/1/moc#'most_frequently_used'> rdf:type owl:NamedIndividual ,
+                                                                                   :ArtTopic ;
+                                                                          rdfs:label "most frequently used"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#'overlapping_layers'
+<http://www.semanticweb.org/ontologies/2023/1/moc#'overlapping_layers'> rdf:type owl:NamedIndividual ,
+                                                                                 :ArtTechnique ;
+                                                                        rdfs:label "overlapping layers"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#'red_flowers'
+<http://www.semanticweb.org/ontologies/2023/1/moc#'red_flowers'> rdf:type owl:NamedIndividual ,
+                                                                          :ArtDetail ;
+                                                                 :hasColor :Red_lake ,
+                                                                           :Vermillion ;
+                                                                 :isPartOf :WaterLilies ;
+                                                                 rdfs:label "red flowers"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#'single_stroke'
+<http://www.semanticweb.org/ontologies/2023/1/moc#'single_stroke'> rdf:type owl:NamedIndividual ,
+                                                                            :ArtTechnique ;
+                                                                   rdfs:label "single stroke"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#'two_layers_of_ground'
+<http://www.semanticweb.org/ontologies/2023/1/moc#'two_layers_of_ground'> rdf:type owl:NamedIndividual ,
+                                                                                   :ArtDetail ;
+                                                                          :isPartOf :Irises ;
+                                                                          rdfs:label "two layers of ground"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#1906
+<http://www.semanticweb.org/ontologies/2023/1/moc#1906> rdf:type owl:NamedIndividual ,
+                                                                 :CreationDate ;
+                                                        rdfs:label "1906"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#1914-1917
+<http://www.semanticweb.org/ontologies/2023/1/moc#1914-1917> rdf:type owl:NamedIndividual ,
+                                                                      :DatePeriod ;
+                                                             rdfs:label "1914-1917"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#1916
+<http://www.semanticweb.org/ontologies/2023/1/moc#1916> rdf:type owl:NamedIndividual ,
+                                                                 :CreationDate ;
+                                                        rdfs:label "1916"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2023/1/moc#Zinc/barium_yellow
+<http://www.semanticweb.org/ontologies/2023/1/moc#Zinc/barium_yellow> rdf:type owl:NamedIndividual ,
+                                                                               :SpecificColor ;
+                                                                      rdfs:label "Zinc/barium yellow"@en .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+:Artist rdfs:label "Artist"@en .
+
+
+:Supplier rdfs:label "Supplier"@en .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
