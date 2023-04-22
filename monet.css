@@ -55,6 +55,10 @@ body{
 	font-family: "Regular";
 }
 
+#moc{
+	font-size: 6em;
+}
+
 .cover-container {
 	background-image: url("images/lilies.jpg");
 	background-repeat: no-repeat;
@@ -110,7 +114,7 @@ a{
 	text-align: justify;
 }
 
-#items, #cm, #ab, #sp{
+#items, #cm, #ab, #sp, #end{
 	margin-top: 2em;
 }
 
@@ -132,8 +136,9 @@ a{
 }
 
 .info{
-	font-size: 1.5em;
+	font-size: 1.2em;
 	margin-bottom: 2em;
+	font-family: "Regular";
 }
 
 .readme{
