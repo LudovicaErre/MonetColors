@@ -43,8 +43,8 @@
   </header>
   
    <main class="px-3 text-dark text-center">
-    <h1><b>MOC</b></h1>
-    <h2><i>Monet's color ontology</i></h2>
+    <h1 id="moc"><b>MOC</b></h1>
+    <h2><i>Monet's colors ontology</i></h2>
     <p>
       <a href="#idea" class="btn btn-outline-dark rounded-0"><b>Discover more</b></a>
     </p>
@@ -56,13 +56,13 @@
 	<div class="row">
 		<div class="col" id="palette">
 			<img src="images/palette.png" class="img">
-			<p id="text"> "...couverte de couleurs par petits tas espacés: du cobalt, du bleu d'outremer, du violet, du vermillon, de l'ocre, de l'orange, du vert foncé, un autre vert pas très clair, du jaune d'ocre, et enfin du jaune d'outremer. Au milieu, des montagnes de blanc des sommets neigeux." - René Gimpel
+			<p id="text"> "...couverte de couleurs par petits tas espacés: du cobalt, du bleu d'outremer, du violet, du vermillon, de l'ocre, de l'orange, du vert foncé, un autre vert pas très clair, du jaune d'ocre, et enfin du jaune d'outremer. Au milieu, des montagnes de blanc des sommets neigeux." - <i>René Gimpel</i>
 		</div>
     	<div class="col text-justify" id="proj">
     		<h1>The Project Idea</h1>
     		<hr>
     		<p>
-    			The intent of the project is to compare two articles regarding Monet's colors used in the making of the "Water Lilies," respectively <a href="https://www.nationalgallery.org.uk/research/research-resources/technical-bulletin/monets-palette-in-the-twentieth-century-water-lilies-and-irises">Monet's Palette in the Twentieth Century: "Water-Lilies" and "Irises"</a> and <a href="https://www.artic.edu/articles/862/color-chemistry-and-creativity-in-monets-water-lilies">Color, Chemistry, and Creativity in Monet’s Water Lilies</a>, and identify their similarities and differences through the creation of an ontology and the implementation of competency questions based on it; these can then be verified by querying them in SPARQL language. The first article refers to the artworks preserved at the National Gallery in London from a historical perspective and then focuses on detailed analyses of the specific color tones including their chemical compositions used in both Water Lilies 1916 and Irises 1914-1917. The second article, on the other hand, refers to works preserved at the Art Institute of Chicago and reviews the color palette used by Monet for the 1906 Water Lilies by identifying its historical and color composition components through a scientific analysis.
+    			The intent of the project is to compare two articles regarding Monet's colors used in the making of the <i>"Water Lilies"</i>, respectively <a href="https://www.nationalgallery.org.uk/research/research-resources/technical-bulletin/monets-palette-in-the-twentieth-century-water-lilies-and-irises"><b>Monet's Palette in the Twentieth Century: "Water-Lilies" and "Irises"</b></a> and <a href="https://www.artic.edu/articles/862/color-chemistry-and-creativity-in-monets-water-lilies"><b>Color, Chemistry, and Creativity in Monet’s Water Lilies</b></a>, and identify their similarities and differences through the creation of an ontology and the implementation of competency questions based on it; these can then be verified by querying them in SPARQL language.  The first article refers to the artworks preserved at the <i>National Gallery</i> in London from a historical perspective and then focuses on detailed analyses of the specific color tones including their chemical compositions used in both Water Lilies 1916 and Irises 1914-1917. The second article, on the other hand, refers to works preserved at the <i>Art Institute of Chicago</i> and reviews the color palette used by Monet for the 1906 Water Lilies by identifying its historical and color composition components through a scientific analysis.
     		</p>
     		<div id="items"></div>
 		</div>
@@ -75,7 +75,7 @@
   	<h1>Informal Competency Questions</h1>
   	<hr>
   	<p class="info">
-  		The first step concerned the modeling of the source texts by the creation of competency questions obtained from the sources to identify the most relevant information for the purposes of our research. Three groups were considered: the first refers specifically to the artworks of the National Gallery, the second to those of the Art Institute, and the third aims to compare the two texts through comparison questions. An expected result was reported for each question in order to verify the reliability of the SPARQL queries that will be seen later.
+  		The first step concerned the <b>modeling of the source texts</b> by the creation of <b>competency questions</b> obtained from the sources to identify the most relevant information for the purposes of our research. Three groups were considered: the first refers specifically to the artworks of the National Gallery, the second to those of the Art Institute, and the third aims to compare the two texts through comparison questions. An <b>expected result</b> was reported for each question in order to verify the reliability of the SPARQL queries that will be seen later.
   	</p>
     <div class="col" id="tng">
       <h2>The National Gallery</h2>
@@ -121,7 +121,7 @@
   	<h1 id="cm">The Ontology</h1>
   	<hr>
   	<p class="info">
-  		Resource modeling is continued by defining classes and properties through the manual creation of an ontology using Protégé software, MOC, which relates the texts. Next, the ontology was serialized in turtle syntax and can be viewed interactively through a web application. In addition, significant individuals were identified for the realization of the model and the links between them can be observed in the knowledge graph; thanks to these two visualization methods, users can explore the MOC ontology in a complete and in-depth manner, understanding how the concepts and relationships that characterize the domain of reference of the project have been modeled. Both turtle serialization and knowledge graph can be downloaded.
+  		Resource modeling is continued by defining <b>classes</b> and <b>properties</b> through the manual creation of an <b>ontology</b> using <i>Protégé</i> software, <b>MOC</b>, which relates the texts. Next, the ontology was serialized in <b>Turtle syntax</b> and can be viewed interactively through a web application. In addition, significant <i>individuals</i> were identified for the realization of the model and the links between them can be observed in the <b>knowledge graph</b>; thanks to these two visualization methods, users can explore the MOC ontology in a complete and in-depth manner, understanding how the concepts and relationships that characterize the domain of reference of the project have been modeled. Both turtle serialization and knowledge graph can be downloaded.
   	</p>
   		<div class="col" id="ts">
       		<h2>Turtle Serialization <a href="OntologyMoc.owl" download><i class="bi bi-cloud-arrow-down-fill"></i></a></h2>
@@ -150,7 +150,9 @@
   	<h1 id="sp">SPARQL: Formal Competency Questions</h1>
   	<hr>
   	<p class="info">
-  		The last phase involved the translation of the competency questions into informal questions answered by SPARQL queries that can be tested through the provided python codes. The main PREFIXs considered are given below<br>PREFIX moc: <http://www.semanticweb.org/ontologies/2023/1/moc#><br>PREFIX owl: <http://www.w3.org/2002/07/owl#><br>PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#><br>PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+  		The last phase involved the translation of the competency questions into <b>informal questions</b> answered by <b>SPARQL queries</b> that can be tested through the provided python codes. The main PREFIXs considered are given below.<br>
+  		<br>
+  		PREFIX moc: &lt;http://www.semanticweb.org/ontologies/2023/1/moc#&gt;<br>PREFIX owl: &lt;http://www.w3.org/2002/07/owl#&gt;<br>PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;<br>PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
   	</p>
   	 <div class="col-sm-4 d-flex justify-content-center">
 			<div class="card-group" style="width: 15em; padding-bottom: 2rem;">
@@ -419,8 +421,9 @@
 	 	<i>The python files with the queries and results can be downloaded here</i> <a href="queries.zip" download><i class="bi bi-cloud-arrow-down-fill"></i></a>
 	 </p>
 	 <p>
-	 	<h1>Conclusion</h1>
-		<p>
+	 	<h1 id="end">Conclusion</h1>
+	 	<hr>
+		<p class="info">
 			Our research focused on the comparison of two descriptive texts of the same cultural topic and their interoperability represented in the knowledge graph. Similarities and differences were analyzed with regard to the subject matter then tested by means of competency questions and, in a second step, computationally verified informal questions. For the purposes of the project, several tools made available for the purpose were useful, among the first being the Protégé software and followed by easily searchable online applications. The ontology created for the purpose can be easily enriched with other resources concerning Monet, classifying his artworks based on the predominant color tone, and/or the field of contemporary art to enable its usefulness to the relation of other items. Suggestions are made regarding the art current of Impressionism including techniques and other artists. The subclass regarding art movements, however allows for the addition of other currents and thus an expansion of the ontology itself. Moreover, MOC could be used as a tool for analyzing and cataloging existing artworks, allowing for more accurate and efficient identification and classification of the colors used by various artists.<br>
 			<br>
 			The MOC ontology was designed to be user-friendly for experts in art history and computer science, as well as for fans of Monet and his masterpieces.
@@ -433,10 +436,10 @@
   <div class="row">
   	<h1 id="ab">About</h1>
   	<hr>
-	  <p>
-		The research was produced as an end-of-course project for the course "Knowledge Representation and Extraction" of the Master's Degree in Digital Humanities and Digital Knowledge at the University of Bologna, taught by Professors Andrea Giovanni Nuzzolese and Aldo Gangemi. Carmela Santaniello and Ludovica Russo worked on its implementation. 
+	  <p class="info">
+		The research was produced as an end-of-course project for the course <b>"Knowledge Representation and Extraction"</b> of the Master's Degree in Digital Humanities and Digital Knowledge at the University of Bologna, taught by Professors Andrea Giovanni Nuzzolese and Aldo Gangemi. Carmela Santaniello and Ludovica Russo worked on its implementation. 
 		<br>
-		Disclaimer - The goal of the project is to test methods for interpreting data and content as knowledge resources. Publication of the selected articles is not intended to be an alternative or substitute for their original placements. All copyright and related rights to the content remain with the original owners.  
+		<b>Disclaimer</b> - The goal of the project is to test methods for interpreting data and content as knowledge resources. Publication of the selected articles is not intended to be an alternative or substitute for their original placements.  <i>All copyright and related rights to the content remain with the original owners.</i>
 	  </p>
   </div>
 </div>
